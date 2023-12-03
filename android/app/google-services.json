@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "807006308387",
+    "project_id": "vital-invention-397314",
+    "storage_bucket": "vital-invention-397314.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:807006308387:android:91ff3a4eba14632c480996",
+        "android_client_info": {
+          "package_name": "com.example.expenditure_management"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "807006308387-kidr74sv4gudkgi8j5qcaao9buijhg6e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCM8ADHvSCN5Hfj8UNFFQQ_rDsC4JpHSoE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "807006308387-kidr74sv4gudkgi8j5qcaao9buijhg6e.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "807006308387-nm6m45sgbmh8k2dh7r7k61jlpkieu0m0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.expenditureManagement"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
