@@ -24,7 +24,7 @@ class InfoWidget extends StatelessWidget {
           child: Container(
             color: Theme.of(context).appBarTheme.backgroundColor,
             width: double.infinity,
-            height: 55,
+            height: 50,
             child: Center(
               child: user != null
                   ? Text(

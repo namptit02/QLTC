@@ -48,11 +48,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       "title": "statistical",
       "content": "view_your_spending_and_income_reports_through_graphs"
     },
-    {
-      "image": "assets/intro/profile.jpg",
-      "title": "account",
-      "content": "edit_personal_information_and_other_settings"
-    },
+  
   ];
 
   @override

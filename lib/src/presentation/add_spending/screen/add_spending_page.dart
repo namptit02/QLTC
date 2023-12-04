@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:expenditure_management/src/presentation/add_spending/widget/add_friend.dart';
 import 'package:expenditure_management/src/presentation/add_spending/widget/input_money.dart';
 import 'package:expenditure_management/src/presentation/add_spending/widget/input_spending.dart';
 import 'package:expenditure_management/src/presentation/add_spending/widget/item_spending.dart';
@@ -83,12 +82,12 @@ class _AddSpendingPageState extends State<AddSpendingPage> {
         child: Column(
           children: [
             addSpending(),
-            if (more) moreFunction(),
-            MoreButton(
-              action: () => setState(() => more = !more),
-              more: more,
-            ),
-            const SizedBox(height: 10)
+            // if (more) moreFunction(),
+            // MoreButton(
+            //   action: () => setState(() => more = !more),
+            //   more: more,
+            // ),
+            // const SizedBox(height: 10)
           ],
         ),
       ),
@@ -197,57 +196,6 @@ class _AddSpendingPageState extends State<AddSpendingPage> {
       ),
     );
   }
-
-  Widget moreFunction() {
-    return Padding(
-      padding: const EdgeInsets.all(10),
-      child: Column(
-        children: [
-          Card(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(10),
-              child: Column(
-                children: [
-                  inputSpending(
-                    icon: Icons.location_on_outlined,
-                    color: const Color.fromRGBO(99, 195, 40, 1),
-                    controller: _location,
-                    textCapitalization: TextCapitalization.words,
-                    textInputAction: TextInputAction.done,
-                    hintText:
-                        AppLocalizations.of(context).translate('location'),
-                  ),
-                  line(),
-                  const SizedBox(height: 5),
-                  AddFriend(
-                    friends: friends,
-                    colors: colors,
-                    add: (friends, colors) {
-                      setState(() {
-                        this.colors = colors;
-                        this.friends = friends;
-                      });
-                    },
-                    remove: (index) => setState(() {
-                      friends.removeAt(index);
-                      colors.removeAt(index);
-                    }),
-                  ),
-                  const SizedBox(height: 10),
-                ],
-              ),
-            ),
-          ),
-          const SizedBox(height: 20),
-          imageWidget(),
-        ],
-      ),
-    );
-  }
-
   Widget imageWidget() {
     return Card(
       shape: RoundedRectangleBorder(
@@ -313,8 +261,7 @@ class _AddSpendingPageState extends State<AddSpendingPage> {
         ),
         note: _note.text.trim(),
         image: image != null ? image!.path : null,
-        location: _location.text.trim(),
-        friends: friends,
+       
       );
       loadingAnimation(context);
       await SpendingFirebase.addSpending(spending);

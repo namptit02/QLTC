@@ -9,7 +9,6 @@ import '../../../core/function/route_function.dart';
 import '../../../core/setting/localization/app_localizations.dart';
 import '../../../core/utils/constants/list.dart';
 import '../../../data/models/filter.dart';
-import '../../add_friend/screen/add_friend_page.dart';
 import '../../add_spending/widget/circle_text.dart';
 import '../../add_spending/widget/remove_icon.dart';
 import '../widgets/item_filter.dart';
@@ -214,83 +213,7 @@ class _FilterPageState extends State<FilterPage> {
           ),
         ),
         const SizedBox(width: 10),
-        Expanded(
-          child: InkWell(
-            onTap: () {
-              Navigator.of(context).push(
-                createRoute(
-                  screen: AddFriendPage(
-                    friends: filter.friends!,
-                    colors: filter.colors!,
-                    action: (friends, colors) {
-                      setState(() {
-                        filter.friends = List.from(friends);
-                        filter.colors = List.from(colors);
-                      });
-                    },
-                  ),
-                  begin: const Offset(1, 0),
-                ),
-              );
-            },
-            child: Container(
-              width: double.infinity,
-              alignment: Alignment.centerLeft,
-              height: 45,
-              decoration: BoxDecoration(
-                color: Colors.grey[300],
-                borderRadius: BorderRadius.circular(5),
-              ),
-              child: filter.friends!.isEmpty
-                  ? Center(
-                      child: Text(
-                        AppLocalizations.of(context).translate('friend'),
-                        style: const TextStyle(
-                          fontSize: 16,
-                          color: Colors.grey,
-                        ),
-                      ),
-                    )
-                  : Wrap(
-                      runSpacing: 5,
-                      spacing: 2,
-                      children: List.generate(filter.friends!.length, (index) {
-                        return Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 5),
-                          child: Container(
-                            padding: const EdgeInsets.only(right: 10),
-                            decoration: BoxDecoration(
-                              color: Colors.grey.withOpacity(0.7),
-                              borderRadius: BorderRadius.circular(90),
-                            ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                circleText(
-                                  text: filter.friends![index][0],
-                                  color: filter.colors![index],
-                                ),
-                                const SizedBox(width: 10),
-                                Text(
-                                  filter.friends![index],
-                                  style: const TextStyle(fontSize: 16),
-                                ),
-                                const SizedBox(width: 5),
-                                removeIcon(action: () {
-                                  setState(() {
-                                    filter.friends!.removeAt(index);
-                                    filter.colors!.removeAt(index);
-                                  });
-                                }),
-                              ],
-                            ),
-                          ),
-                        );
-                      }),
-                    ),
-            ),
-          ),
-        ),
+        
       ],
     );
   }

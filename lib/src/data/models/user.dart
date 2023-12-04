@@ -1,8 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 const defaultAvatar =
-    "https://firebasestorage.googleapis.com/v0/b/spending-management-c955a.appspot.com/o/FVK7wz5aIAA25l8.jpg?alt=media&token=ddceb8f7-7cf7-4c42-a806-5d0d48ce58f5";
-
+"https://firebasestorage.googleapis.com/v0/b/vital-invention-397314.appspot.com/o/background2.jpeg?alt=media&token=8340b448-f2c3-49b5-80a7-e3170269ab75";
 class User {
   String name;
   String birthday;

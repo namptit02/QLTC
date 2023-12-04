@@ -74,13 +74,13 @@ class _SearchPageState extends State<SearchPage> {
       return false;
     }
 
-    if (filter.friends!.isNotEmpty) {
-      List<String> list = filter.friends!
-          .where((element) => spending.friends!.contains(element))
-          .toList();
+    // if (filter.friends!.isNotEmpty) {
+    //   List<String> list = filter.friends!
+    //       .where((element) => spending.friends!.contains(element))
+    //       .toList();
 
-      if (list.isEmpty) return false;
-    }
+    //   if (list.isEmpty) return false;
+    // }
 
     if (spending.note != null && !spending.note!.contains(filter.note)) {
       return false;

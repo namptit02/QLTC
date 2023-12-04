@@ -2,7 +2,6 @@ import 'dart:io';
 import 'dart:math';
 
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:expenditure_management/src/presentation/add_spending/widget/add_friend.dart';
 import 'package:expenditure_management/src/presentation/add_spending/widget/input_money.dart';
 import 'package:expenditure_management/src/presentation/add_spending/widget/input_spending.dart';
 import 'package:expenditure_management/src/presentation/add_spending/widget/item_spending.dart';
@@ -50,7 +49,7 @@ class _EditSpendingPageState extends State<EditSpendingPage> {
   bool more = false;
   String? typeName;
   int coefficient = 1;
-  List<String> friends = [];
+  
   List<Color> colors = [];
   bool checkPickImage = false;
 
@@ -67,12 +66,8 @@ class _EditSpendingPageState extends State<EditSpendingPage> {
   void initState() {
     _money.text = NumberFormat.currency(locale: "vi_VI")
         .format(widget.spending.money.abs());
-    _location.text = widget.spending.location ?? "";
-    friends.addAll(widget.spending.friends ?? []);
-    for (var _ in friends) {
-      colors.add(Color.fromRGBO(Random().nextInt(255), Random().nextInt(255),
-          Random().nextInt(255), 1));
-    }
+    
+   
     if (widget.spending.note != null) {
       _note.text = widget.spending.note!;
     }
@@ -259,20 +254,7 @@ class _EditSpendingPageState extends State<EditSpendingPage> {
                   ),
                   line(),
                   const SizedBox(height: 5),
-                  AddFriend(
-                    friends: friends,
-                    colors: colors,
-                    add: (friends, colors) {
-                      setState(() {
-                        this.colors = colors;
-                        this.friends = friends;
-                      });
-                    },
-                    remove: (index) => setState(() {
-                      friends.removeAt(index);
-                      colors.removeAt(index);
-                    }),
-                  ),
+               
                   const SizedBox(height: 10),
                 ],
               ),
@@ -384,8 +366,7 @@ class _EditSpendingPageState extends State<EditSpendingPage> {
         ),
         note: _note.text.trim(),
         image: widget.spending.image,
-        location: _location.text.trim(),
-        friends: friends,
+       
       );
       loadingAnimation(context);
       await SpendingFirebase.updateSpending(

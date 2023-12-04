@@ -8,8 +8,7 @@ class Spending {
   DateTime dateTime;
   String? image;
   String? typeName;
-  String? location;
-  List<String>? friends;
+
 
   Spending({
     this.id,
@@ -19,8 +18,7 @@ class Spending {
     this.note,
     this.image,
     this.typeName,
-    this.location,
-    this.friends,
+   
   });
 
   Map<String, dynamic> toMap() => {
@@ -30,8 +28,7 @@ class Spending {
         "date": dateTime,
         "image": image,
         "typeName": typeName,
-        "location": location,
-        "friends": friends
+     
       };
 
   factory Spending.fromFirebase(DocumentSnapshot snapshot) {
@@ -44,10 +41,7 @@ class Spending {
         note: data["note"],
         image: data["image"],
         typeName: data["typeName"],
-        location: data["location"],
-        friends: (data["friends"] as List<dynamic>)
-            .map((e) => e.toString())
-            .toList());
+        );
   }
 
   Spending copyWith({
@@ -68,8 +62,7 @@ class Spending {
       note: note ?? this.note,
       image: image ?? this.image,
       typeName: typeName ?? this.typeName,
-      location: location ?? this.location,
-      friends: friends ?? this.friends,
+   
     );
   }
 }
