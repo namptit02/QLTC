@@ -1,6 +1,6 @@
 # expenditure_management
 
-A new Flutter project.
+App Quản Lý Thu Chi Thực tập cơ sở Flutter
 
 ## Getting Started
 
