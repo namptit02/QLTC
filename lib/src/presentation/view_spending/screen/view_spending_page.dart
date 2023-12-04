@@ -276,55 +276,7 @@ class _ViewSpendingPageState extends State<ViewSpendingPage> {
     );
   }
 
-  Widget addFriend() {
-    return Row(
-      children: [
-        const SizedBox(
-          height: 50,
-          width: 50,
-          child: Icon(
-            Icons.people,
-            color: Color.fromRGBO(202, 31, 52, 1),
-            size: 30,
-          ),
-        ),
-        const SizedBox(width: 10),
-        // if (spending.friends!.isNotEmpty)
-        //   Expanded(
-        //     child: Wrap(
-        //       runSpacing: 5,
-        //       spacing: 2,
-        //       children: List.generate(spending.friends!.length, (index) {
-        //         return Padding(
-        //           padding: const EdgeInsets.symmetric(horizontal: 5),
-        //           child: Container(
-        //             padding: const EdgeInsets.only(right: 10),
-        //             decoration: BoxDecoration(
-        //               color: Colors.grey.withOpacity(0.7),
-        //               borderRadius: BorderRadius.circular(90),
-        //             ),
-        //             child: Row(
-        //               mainAxisSize: MainAxisSize.min,
-        //               children: [
-        //                 circleText(
-        //                   text: spending.friends![index][0],
-        //                   color: colors[index],
-        //                 ),
-        //                 const SizedBox(width: 10),
-        //                 Text(
-        //                   spending.friends![index],
-        //                   style: const TextStyle(fontSize: 16),
-        //                 ),
-        //               ],
-        //             ),
-        //           ),
-        //         );
-        //       }),
-        //     ),
-        //   )
-      ],
-    );
-  }
+ 
 
   Widget line() {
     return const Divider(
