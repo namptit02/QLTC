@@ -28,7 +28,8 @@ class AppLocalizations {
     });
   }
 
-  String translate(String key) => _localizedStrings[key] as String;
+// ignore: unnecessary_cast
+String translate(String key) => _localizedStrings[key] as String? ?? '';
 
   bool get isEnLocale => locale.languageCode == 'en';
 }

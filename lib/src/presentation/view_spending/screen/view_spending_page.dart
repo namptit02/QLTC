@@ -206,37 +206,6 @@ class _ViewSpendingPageState extends State<ViewSpendingPage> {
                         )
                       ],
                     ),
-                  // if (spending.location != null &&
-                  //     spending.location!.isNotEmpty)
-                  //   Row(
-                  //     children: [
-                  //       const SizedBox(
-                  //         width: 50,
-                  //         height: 50,
-                  //         child: Icon(
-                  //           Icons.location_on_outlined,
-                  //           size: 30,
-                  //           color: Color.fromRGBO(99, 195, 40, 1),
-                  //         ),
-                  //       ),
-                  //       const SizedBox(width: 10),
-                  //       Text(
-                  //         spending.location!,
-                  //         style: const TextStyle(fontSize: 16),
-                  //       )
-                  //     ],
-                  //   ),
-                  // if (spending.friends != null && spending.friends!.isNotEmpty)
-                  //   ListView(
-                  //     shrinkWrap: true,
-                  //     physics: const NeverScrollableScrollPhysics(),
-                  //     children: [
-                  //       const SizedBox(height: 5),
-                  //       addFriend(),
-                  //       const SizedBox(height: 5),
-                  //     ],
-                  //   ),
-                  // if (spending.friends != null && spending.friends!.isNotEmpty)
                     const SizedBox(height: 10),
                   if (spending.image != null)
                     InkWell(
